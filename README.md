@@ -1,6 +1,8 @@
 # Suitmedia Intern Technical Test
 
-Aplikasi ujian teknis (*technical test*) untuk program magang Suitmedia, dibangun menggunakan **Flutter** dengan pendekatan arsitektur **MVVM (Model-View-ViewModel)** dan manajemen state **GetX**.
+Project Flutter ini adalah project yang dibangun untuk pendekatan arsitektur MVVM (Model-View-ViewModel) dan manajemen state GetX.
+
+Project ini merupakan bagian dari technical test pada proses recruitment Mobile Developer Intern untuk SuitMedia School 2026.
 
 ## 📱 Deskripsi Aplikasi
 
@@ -13,8 +15,8 @@ Aplikasi ini terdiri dari 3 layar utama (sesuai spesifikasi UI/UX):
 ## 🛠️ Teknologi & *Packages* Utama
 
 - **[GetX](https://pub.dev/packages/get)**: Digunakan untuk *State Management*, *Dependency Injection* (`BindingsBuilder`), dan navigasi halaman (`Get.toNamed()`).
-- **[Dio](https://pub.dev/packages/dio)**: HTTP client tangguh untuk mengelola *request* API (GET *users* dari ReqRes).
-- **[Flutter Dotenv](https://pub.dev/packages/flutter_dotenv)**: Manajemen konfigurasi rahasia (*Environment Variables*) untuk *API Key* dan *Base URL*.
+- **[Dio](https://pub.dev/packages/dio)**: HTTP client untuk mengelola *request* API (GET *users* dari ReqRes).
+- **[Flutter Dotenv](https://pub.dev/packages/flutter_dotenv)**: Manajemen konfigurasi (*Environment Variables*) untuk *API Key* dan *Base URL*.
 - **[Cached Network Image](https://pub.dev/packages/cached_network_image)**: Menampilkan gambar avatar pengguna secara asinkron dengan fitur *caching*.
 - **[Google Fonts](https://pub.dev/packages/google_fonts)**: Untuk menggunakan tipe huruf Poppins secara dinamis tanpa perlu mengunduh file `.ttf` secara manual.
 
@@ -42,13 +44,14 @@ flutter pub get
 
 Karena aplikasi ini menggunakan `.env` untuk keamanan data, Anda perlu membuat file konfigurasi secara lokal:
 
-1. Salin/duplikasi file `.env.example` yang ada di *root directory*.
-2. Ubah namanya menjadi `.env`.
-3. Pastikan isi filenya seperti ini (dan masukkan API Key Anda jika ada):
+1. Lakukan sign in di web `[reqres.in](https://reqres.in/)`untuk mendapatkan secret key
+2. Salin/duplikasi file `.env.example` yang ada di *root directory*.
+3. Ubah namanya menjadi `.env`.
+4. Pastikan isi filenya seperti ini (dan masukkan API Key Anda jika ada):
 
 ```env
 BASE_URL=https://reqres.in/api
-API_KEY='Enter_Your_Key_Here'
+API_KEY=YOUR_API_KEY_HERE // ---> Ganti API key dengan API key yang digenerate reqres.in
 ```
 
 ### 3. Menjalankan Aplikasi
@@ -58,7 +61,3 @@ Anda dapat menjalankannya di emulator (Android/iOS) atau perangkat fisik menggun
 ```bash
 flutter run
 ```
-
----
-
-*Dibuat untuk keperluan penilaian Suitmedia Technical Test App.*
