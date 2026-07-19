@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:intern_technical_test_app/views/dashboard/dashboard_view.dart';
 import '../../routes/app_routes.dart';
 
 class AuthenticateViewModel extends GetxController {
@@ -32,20 +33,17 @@ class AuthenticateViewModel extends GetxController {
 
     Get.defaultDialog(
       title: 'Result',
-      middleText: isPalindrome
-          ? 'Input Termasuk Palindrome'
-          : 'Input Bukan Palindrome',
+      middleText: isPalindrome ? 'isPalindrome' : 'not palindrome',
       textConfirm: 'OK',
       confirmTextColor: Colors.white,
       onConfirm: () => Get.back(),
     );
   }
 
-  void goToSecondScreen() {
+  void DashboardView() {
     String name = nameController.text.trim();
     if (name.isEmpty) {
-      Get.defaultDialog(title: 'Error', middleText: 'Please enter your name');
-      return;
+      Get.toNamed(AppRoutes.dashboard, arguments: "John Doe");
     }
     Get.toNamed(AppRoutes.dashboard, arguments: name);
   }

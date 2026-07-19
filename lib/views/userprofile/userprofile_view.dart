@@ -10,7 +10,8 @@ class UserprofileView extends GetView<UserprofileViewModel> {
 
   UserprofileView({super.key}) {
     _scrollController.addListener(() {
-      if (_scrollController.position.pixels >= _scrollController.position.maxScrollExtent - 200) {
+      if (_scrollController.position.pixels >=
+          _scrollController.position.maxScrollExtent - 200) {
         controller.fetchUsers();
       }
     });
@@ -28,7 +29,7 @@ class UserprofileView extends GetView<UserprofileViewModel> {
           onPressed: () => Get.back(),
         ),
         title: Text(
-          'Third Screen',
+          'User List',
           style: GoogleFonts.poppins(
             color: AppColors.primaryText,
             fontSize: 18,
@@ -61,7 +62,9 @@ class UserprofileView extends GetView<UserprofileViewModel> {
             child: ListView.separated(
               controller: _scrollController,
               padding: const EdgeInsets.all(20),
-              itemCount: controller.users.length + (controller.isLoadMore.value ? 1 : 0),
+              itemCount:
+                  controller.users.length +
+                  (controller.isLoadMore.value ? 1 : 0),
               separatorBuilder: (context, index) => const Divider(
                 color: Color(0xFFE2E3E4),
                 thickness: 1,
@@ -89,7 +92,8 @@ class UserprofileView extends GetView<UserprofileViewModel> {
                         width: 60,
                         height: 60,
                         fit: BoxFit.cover,
-                        placeholder: (context, url) => const CircularProgressIndicator(),
+                        placeholder: (context, url) =>
+                            const CircularProgressIndicator(),
                         errorWidget: (context, url, error) => CachedNetworkImage(
                           // Fallback ke picsum jika avatar asli gagal diload
                           imageUrl: 'https://picsum.photos/seed/${user.id}/200',

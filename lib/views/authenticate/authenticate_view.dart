@@ -56,28 +56,28 @@ class AuthenticateView extends GetView<AuthenticateViewModel> {
                   // Name TextField
                   _buildTextField(
                     controller: controller.nameController,
-                    hintText: 'Name',
+                    hintText: 'Masukkan Nama',
                   ),
                   const SizedBox(height: 16),
 
                   // Palindrome TextField
                   _buildTextField(
                     controller: controller.palindromeController,
-                    hintText: 'Palindrome',
+                    hintText: 'Masukkan Teks Palindrome',
                   ),
                   const SizedBox(height: 45),
 
                   // Check Button
                   _buildButton(
-                    text: 'CHECK',
+                    text: 'Check Text',
                     onPressed: controller.checkPalindrome,
                   ),
                   const SizedBox(height: 16),
 
                   // Next Button
                   _buildButton(
-                    text: 'NEXT',
-                    onPressed: controller.goToSecondScreen,
+                    text: 'Next',
+                    onPressed: controller.DashboardView,
                   ),
                 ],
               ),

@@ -19,7 +19,7 @@ class DashboardView extends GetView<DashboardViewModel> {
           onPressed: () => Get.back(),
         ),
         title: Text(
-          'Second Screen',
+          'Dashboard',
           style: GoogleFonts.poppins(
             color: AppColors.primaryText,
             fontSize: 18,
